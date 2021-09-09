@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Technical Glossary</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://get.mavo.io/mavo.css"/>
+    <link rel="stylesheet" href="styles/mavo-markdown.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <script src="https://get.mavo.io/mavo.js"></script>
+    <script src="scripts/mavo-markdown.js"></script>
+    <script src="scripts/mavo-cropper.js"></script>
+    <script src="scripts/mavo-sort.js"></script>
+
+  </head>
+  <body mv-app="Glossary"
+        mv-storage="https://github.com/caraya/mglossary/blob/main/glossary.json"
+        mv-plugins="mavo-markdown mavo-cropper">
+    <h1>Technical Glossary</h1>
+
+    <div class="Glossary" mv-list mv-sort="+">
+
+      <!--
+        The section and its content will be repeated for each entry in the JSON file.
+      -->
+      <section  typeof="glossary-entry"
+                mv-list-item
+                class="glossary"
+                mv-plugins="markdown mavo-cropper"
+                mv-sort="+">
+        <h2 property="Word" mv-default="Default Glossary Entry"></h2>
+
+        <fieldset>
+          <legend>Description</legend>
+          <div property="Description" mv-default="Description" class="markdown"></div>
+        </fieldset>
+
+        <fieldset>
+          <legend>Associated Image</legend>
+          <img property="Image" mv-default="" class="glossary-entry-image">
+        </fieldset>
+      </section>
+    </div>
+
+  </body>
+</html>
